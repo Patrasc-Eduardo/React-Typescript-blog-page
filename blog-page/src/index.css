@@ -18,7 +18,11 @@ p {
 }
 
 img {
-  width: 100%;
+  display: block;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
 }
 
 .container {
@@ -149,6 +153,7 @@ img {
 
 .show-modal {
   overflow: hidden;
+  display: block;
 }
 
 .show-modal .modal__overlay {
@@ -174,6 +179,18 @@ img {
   height: 750px;
   background: white;
   box-shadow: 0 0 26px 6px;
+}
+
+#authors {
+  border: 1px solid #9b9b9b;
+  color: #1e1e1e;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px 0px 25px;
+  border-radius: 50px;
 }
 
 .modal__content {

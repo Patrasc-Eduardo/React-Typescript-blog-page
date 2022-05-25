@@ -7,11 +7,15 @@ import ContactDetails from './pages/Contact';
 import Reviews from './pages/Reviews';
 import NotFound from './pages/NotFound';
 import TravelDetails from './pages/TravelUpdates';
+import Dropdown from './components/Dropdown';
+import AddButton from './components/AddButton';
+import Article from './components/Article';
+import Modal from './components/Modal';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="container">
-      <Menu/>
+    <body>
       <Router>
         <Routes>
           <Route path="/" element={<Home/>}/>
@@ -22,7 +26,8 @@ function App() {
           <Route path="*" element={<NotFound/>}/>
         </Routes>
     </Router>
-    </div>
+    <Footer />
+    </body>
   );
 }
 

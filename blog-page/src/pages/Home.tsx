@@ -1,8 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import AddButton from '../components/AddButton';
+import Article, { IArticle } from '../components/Article';
+import Menu from '../components/Menu';
+import Modal from '../components/Modal';
 
 function Home () {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [article, setArticle] = useState(
+    {
+      id: 0,
+      title: '',
+      tag: '',
+      author: '',
+      date: '',
+      imageUrl: '',
+      content: '',
+    } as IArticle);
+
     return (
-        <h1>Home page</h1>
+      <div className="container">
+      <Menu />
+      <AddButton setIsModalOpen = {setIsModalOpen} setArticle = {setArticle} />
+      <main>
+        <Article articleData={article}/>
+        <Article articleData={article}/>
+      </main>
+      <Modal 
+      isVisible = {isModalOpen}
+      setIsModalOpen = {setIsModalOpen}
+      />
+      </div>
+      
     );
 }
 
