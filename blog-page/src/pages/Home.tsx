@@ -19,18 +19,20 @@ function Home () {
 
     return (
       <div className="container">
+      <div className="container">
       <Menu />
       <AddButton setIsModalOpen = {setIsModalOpen} setArticle = {setArticle} />
       <main>
         <Article articleData={article}/>
         <Article articleData={article}/>
+        <Article articleData={article}/>
       </main>
+      </div>
       <Modal 
       isVisible = {isModalOpen}
       setIsModalOpen = {setIsModalOpen}
       />
       </div>
-      
     );
 }
 

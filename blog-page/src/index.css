@@ -1,12 +1,3 @@
-:root {
-  --white-color: #FFFFFF;
-  --black-color: #1e1e1e;
-  --grey-color: #9b9b9b;
-  --pink-color: #FFE3E3;
-  --cardo-font: 'Cardo', serif;
-  --montserrat-font: 'Montserrat', sans-serif;
-}
-
 html {
   font-family: 'Cardo', serif;
   color: #1e1e1e;
@@ -28,6 +19,32 @@ img {
 .container {
   margin: 0 auto;
   width: 1280px;
+}
+
+.select__auth__container {
+  font-family: 'Cardo', serif;
+  color: #1e1e1e;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0px;
+}
+
+#select__text {
+  font-family: 'Cardo', serif;
+  color: #1e1e1e;
+  padding: 0px 20px 0px 0px;
+}
+
+#authors {
+  border: 1px solid #9b9b9b;
+  color: #1e1e1e;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px 0px 25px;
+  border-radius: 50px;
 }
 
 .nav {
@@ -73,6 +90,24 @@ img {
   width: 300px;
   text-transform: uppercase;
   cursor: pointer;
+  user-select: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {
+  background-color: #FFE3E3;
+}
+
+.button:active {
+  background-color: #FFE3E3;
+  box-shadow: 0 5px #666;
+  transform: translateY(20px);
 }
 
 .title {
@@ -152,8 +187,17 @@ img {
 }
 
 .show-modal {
-  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
   display: block;
+  position: fixed;
+  z-index: 1;
+  left: 250px;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  align-items: center;
+  justify-content: center;
 }
 
 .show-modal .modal__overlay {
@@ -165,7 +209,7 @@ img {
   display: none;
   position: fixed;
   z-index: 1;
-  left: 0;
+  left: 230px;
   top: 0;
   height: 100vh;
   width: 100vw;
@@ -179,18 +223,6 @@ img {
   height: 750px;
   background: white;
   box-shadow: 0 0 26px 6px;
-}
-
-#authors {
-  border: 1px solid #9b9b9b;
-  color: #1e1e1e;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px 0px 25px;
-  border-radius: 50px;
 }
 
 .modal__content {
@@ -234,17 +266,3 @@ img {
 .button--pink {
   background: #FFE3E3;
 }
-
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
