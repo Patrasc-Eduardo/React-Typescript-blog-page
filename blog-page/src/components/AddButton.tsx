@@ -44,7 +44,7 @@ function AddButton(props : AddButtonProps) {
           dummyArticle.date =  new Date().toDateString();
           var seed = Math.floor(Math.random() * 100) + 1;
           dummyArticle.imageUrl = 'https://picsum.photos/seed/' + seed + '/200/300';
-          await fetch("https://jsonplaceholder.typicode.com/users/" + result.id)
+          await fetch("https://jsonplaceholder.typicode.com/users/" + result.userId)
           .then(res => res.json())
           .then(user => {
               dummyArticle.id = user.id;
