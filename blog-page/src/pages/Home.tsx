@@ -21,7 +21,8 @@ function Home () {
     const [articles, setArticles] = useState([] as IArticle[]);
 
     const [articleIsLoaded, setArticleLoaded] = useState(false);
- 
+    
+    var addedArticles = 0;
     return (
       <div className="container">
       <div className="container">
@@ -32,11 +33,14 @@ function Home () {
         {
           articles.map(article => {
             console.log("FILTERED AUTHOR: ", authorName);
-            if (authorName === article.author) {
+            console.log("articles LENGTH: ", articles.length);
+            if (authorName === article.author && addedArticles < 3) {
+              addedArticles += 1;
               return (
               <Article articleData = {article} />
             )
-          } else if (authorName === "") {
+          } else if (authorName === "" && addedArticles < 3) {
+            addedArticles += 1;
             return (
               <Article articleData = {article} />
             )
