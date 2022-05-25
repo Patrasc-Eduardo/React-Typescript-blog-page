@@ -7,11 +7,13 @@ interface AddButtonProps {
     //isModalVisible: Dispatch<SetStateAction<boolean>>;
     setIsModalOpen: Dispatch<SetStateAction<boolean>>;
     setArticle: Dispatch<SetStateAction<IArticle>>;
+    // setArticles: Dispatch<SetStateAction<IArticle[]>>;
+    articles: IArticle[];
 }
 
 function AddButton(props : AddButtonProps) {
     //const [isModalVisible, setModalVisible] = useState(false);
-    let {setIsModalOpen, setArticle} = props;
+    let {setIsModalOpen, setArticle, articles} = props;
 
     const dummyArticle = {
         id: 0,
@@ -41,12 +43,10 @@ function AddButton(props : AddButtonProps) {
           dummyArticle.tag = result.title;
           dummyArticle.date =  new Date().toDateString();
           var seed = Math.floor(Math.random() * 100) + 1;
-          console.log(JSON.stringify(result));
           dummyArticle.imageUrl = 'https://picsum.photos/seed/' + seed + '/200/300';
           await fetch("https://jsonplaceholder.typicode.com/users/" + result.id)
           .then(res => res.json())
           .then(user => {
-              console.log("user: " + JSON.stringify(user));
               dummyArticle.id = user.id;
               dummyArticle.author = user.name;
           });
@@ -55,6 +55,7 @@ function AddButton(props : AddButtonProps) {
       );
       console.log("dummyArticle " + console.log(JSON.stringify(dummyArticle)));
       setArticle(dummyArticle);
+      articles.push(dummyArticle);
     }
 
     //fetch data and populate an article 

@@ -1,13 +1,14 @@
 import React, { Dispatch, SetStateAction } from 'react';
 
 interface ModalProps {
-   isVisible : boolean;
-   setIsModalOpen: Dispatch<SetStateAction<boolean>>;
+    isVisible : boolean;
+    setIsModalOpen: Dispatch<SetStateAction<boolean>>;
+    setArticleLoaded: Dispatch<SetStateAction<boolean>>;
 }
 
 function Modal(props: ModalProps) {
    
-  let { isVisible, setIsModalOpen } = props;
+  let { isVisible, setIsModalOpen, setArticleLoaded } = props;
 
    let modalClassName = "modal__overlay";
 
@@ -15,10 +16,6 @@ function Modal(props: ModalProps) {
       modalClassName += "modal__overlay show-modal";
    } else {
       modalClassName = "modal__overlay";
-   }
-
-   const cancelModal = () => {
-
    }
 
    return (
@@ -73,7 +70,7 @@ function Modal(props: ModalProps) {
                         placeholder="Please enter content"></textarea>
                     <div className="modal__buttons">
                         <button type="button" onClick={() => setIsModalOpen(false)} className="button">Cancel</button>
-                        <button type="button" onClick={() => modalClassName = "modal__overlay"} className="button button--pink">Save</button>
+                        <button type="button" onClick={() => setArticleLoaded(true)} className="button button--pink">Save</button>
                     </div>
                 </div>
             </div>
