@@ -7,6 +7,7 @@ import Modal from '../components/Modal';
 
 function Home () {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [authorName, filterAuthorName] = useState("");
     const [article, setArticle] = useState(
     {
       id: 0,
@@ -25,15 +26,23 @@ function Home () {
       <div className="container">
       <div className="container">
       <Menu />
-      <Dropdown articles = {articles}/>
+      <Dropdown articles = {articles} filterAuthorName = {filterAuthorName}/>
       <AddButton setIsModalOpen = {setIsModalOpen} setArticle = {setArticle} articles = {articles}/>
       <main>
         {
           articles.map(article => {
+            console.log("FILTERED AUTHOR: ", authorName);
+            if (authorName === article.author) {
+              return (
+              <Article articleData = {article} />
+            )
+          } else if (authorName === "") {
             return (
               <Article articleData = {article} />
             )
-          })
+          }
+          }
+          )
         }
       </main>
       </div>
