@@ -1,13 +1,22 @@
 import React from 'react';
+import { IArticle } from './Article';
+import DropdownOption from './DropDownOption';
 
+interface DropdownProps {
+    articles: IArticle[];
+}
 
-function Dropdown () {
+function Dropdown (props: DropdownProps) {
+    const {articles} = props;
     return (
         <select name="authors" id="authors">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
+         {
+          articles.map(article => {
+            return (
+              <DropdownOption article = {article} />
+            )
+          })
+        }
         </select>
     );
 }
