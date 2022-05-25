@@ -25,15 +25,6 @@ function Article(props: ArticleProps) {
                 </li>
                 <li className="info__item">{articleData.date}</li>
             </ul>
-            {/* <div className="actions__container">
-                <button
-                    type="button"
-                    onClick={() => {
-                    }}
-                    className="actions__btn">Edit</button>
-                <button type="button" className="actions__btn">Delete</button>
-            </div> */}
-
             <img src={articleData.imageUrl} alt={articleData.title} />
             <div className="content__container">
                 <p>{articleData.content}</p>

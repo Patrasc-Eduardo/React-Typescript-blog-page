@@ -9,7 +9,6 @@ interface DropdownProps {
 
 function Dropdown (props: DropdownProps) {
     const {articles, filterAuthorName } = props;
-    // const [authorName, filterAuthorName] = useState("");
 
     return (
         <select name="authors" id="authors">

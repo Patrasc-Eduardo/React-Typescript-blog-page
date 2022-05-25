@@ -32,8 +32,6 @@ function Home () {
       <main>
         {
           articles.map(article => {
-            console.log("FILTERED AUTHOR: ", authorName);
-            console.log("articles LENGTH: ", articles.length);
             if (authorName === article.author && addedArticles < 3) {
               addedArticles += 1;
               return (

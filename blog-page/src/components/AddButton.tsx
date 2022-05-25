@@ -12,7 +12,6 @@ interface AddButtonProps {
 }
 
 function AddButton(props : AddButtonProps) {
-    //const [isModalVisible, setModalVisible] = useState(false);
     let {setIsModalOpen, setArticle, articles} = props;
 
     const dummyArticle = {
@@ -38,7 +37,6 @@ function AddButton(props : AddButtonProps) {
         async (posts) => {
           let result = posts[randomId];
           dummyArticle.title = result.title;
-        //   dummyArticle.id = result.id;
           dummyArticle.content = result.body;
           dummyArticle.tag = result.title;
           dummyArticle.date =  new Date().toDateString();
@@ -57,8 +55,6 @@ function AddButton(props : AddButtonProps) {
       setArticle(dummyArticle);
       articles.push(dummyArticle);
     }
-
-    //fetch data and populate an article 
 
     return(
         <div className="add__container">
