@@ -11,7 +11,6 @@ import Dropdown from './components/Dropdown';
 import AddButton from './components/AddButton';
 import Article from './components/Article';
 import Modal from './components/Modal';
-import Footer from './components/Footer';
 
 function App() {
   return (
@@ -26,7 +25,6 @@ function App() {
           <Route path="*" element={<NotFound/>}/>
         </Routes>
     </Router>
-    <Footer />
     </body>
   );
 }
